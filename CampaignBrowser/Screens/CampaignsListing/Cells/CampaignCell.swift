@@ -50,4 +50,11 @@ class CampaignCell: UICollectionViewCell {
         assert(descriptionLabel != nil)
         assert(imageView != nil)
     }
+
+    func configure(with campaign: CampaignListingView.Campaign) {
+        moodImage = campaign.moodImage
+        name = campaign.name
+        descriptionText = campaign.description
+    }
+    
 }

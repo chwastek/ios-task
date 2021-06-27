@@ -70,9 +70,7 @@ class ListingDataSource: NSObject, UICollectionViewDataSource, UICollectionViewD
         let reuseIdentifier =  CampaignListingView.Cells.campaignCell.rawValue
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         if let campaignCell = cell as? CampaignCell {
-            campaignCell.moodImage = campaign.moodImage
-            campaignCell.name = campaign.name
-            campaignCell.descriptionText = campaign.description
+            campaignCell.configure(with: campaign)
         } else {
             assertionFailure("The cell should a CampaignCell")
         }
