@@ -6,6 +6,11 @@ import RxSwift
  The cell which displays a campaign.
  */
 class CampaignCell: UICollectionViewCell {
+    
+    enum AccessibilityIdentifiers: String {
+        case title
+        case description
+    }
 
     private let disposeBag = DisposeBag()
 
@@ -34,12 +39,14 @@ class CampaignCell: UICollectionViewCell {
     var name: String? {
         didSet {
             nameLabel?.text = name
+            nameLabel.accessibilityIdentifier = AccessibilityIdentifiers.title.rawValue
         }
     }
 
     var descriptionText: String? {
         didSet {
             descriptionLabel?.text = descriptionText
+            descriptionLabel.accessibilityIdentifier = AccessibilityIdentifiers.description.rawValue
         }
     }
 
